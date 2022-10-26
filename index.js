@@ -19,7 +19,7 @@ app.get('/subject-categories', (req, res) => {
 
 app.get('/subjects/:id', (req, res) => {
     const id = req.params.id;
-    const selectedSubject = subjects.find(subject => subject.id === id);
+    const selectedSubject = subjects.filter(subject => subject.category_id === id);
     res.send(selectedSubject);
 })
 
